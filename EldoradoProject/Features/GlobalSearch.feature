@@ -18,14 +18,4 @@ Scenario Outline: Check Autosuggest list of Global Search field
 	| пылесос     |
 	| несуществующий     |
 
-	Scenario Outline: Double Check Autosuggest list of Global Search field	
-	And Enter "<search text>" into Global Search field	
-	Then Global Search Autosuggest list should be displayed
-	Then All products name in Autosuggest list should contains "<search text>"
-	When Click on item "Магазины" of Header navigation menu 
-	Then Shops page should be opened with title "Магазины Eldorado"
-	Examples: 
-	| search text |
-	| компьютер  |
-	| ноутбук |
 	

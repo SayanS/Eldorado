@@ -5,16 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 
 namespace EldoradoProject.Pages
 {
     public abstract class BasePage
     {
         private IWebDriver webDriver;
+        public String PAGE_URL;
+        public WebDriverWait wait;
 
         public BasePage(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
+            wait = new WebDriverWait(webDriver,TimeSpan.FromSeconds(5));
             PageFactory.InitElements(this.webDriver, this);
         }
 
@@ -23,10 +27,10 @@ namespace EldoradoProject.Pages
 
         public void scrollIntoView(IWebElement webElement, int offsetY)
         {
-            int y = webElement.Location.Y+offsetY;
+            int y = webElement.Location.Y + offsetY;
             ((IJavaScriptExecutor)webDriver).ExecuteScript("window.scrollTo(0," + y + ")");
         }
-
+                
         public BasePage clickOnHeaderMenuItem(String itemName)
         {
             scrollIntoView(headerNavigationMenu.FindElement(By.XPath("//li//*[contains(text(),'" + itemName + "')]")), -100);

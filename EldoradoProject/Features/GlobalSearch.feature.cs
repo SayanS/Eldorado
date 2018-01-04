@@ -124,43 +124,6 @@ this.CheckAutosuggestListOfGlobalSearchField("несуществующий", ((s
 #line hidden
         }
         
-        public virtual void DoubleCheckAutosuggestListOfGlobalSearchField(string searchText, string[] exampleTags)
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Double Check Autosuggest list of Global Search field", exampleTags);
-#line 21
- this.ScenarioSetup(scenarioInfo);
-#line 3
-this.FeatureBackground();
-#line 22
- testRunner.And(string.Format("Enter \"{0}\" into Global Search field", searchText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 23
- testRunner.Then("Global Search Autosuggest list should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 24
- testRunner.Then(string.Format("All products name in Autosuggest list should contains \"{0}\"", searchText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 25
- testRunner.When("Click on item \"Магазины\" of Header navigation menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 26
- testRunner.Then("Shops page should be opened with title \"Магазины Eldorado\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Double Check Autosuggest list of Global Search field, компьютер", SourceLine=28)]
-        public virtual void DoubleCheckAutosuggestListOfGlobalSearchField_Компьютер()
-        {
-#line 21
- this.DoubleCheckAutosuggestListOfGlobalSearchField("компьютер", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Double Check Autosuggest list of Global Search field, ноутбук", SourceLine=28)]
-        public virtual void DoubleCheckAutosuggestListOfGlobalSearchField_Ноутбук()
-        {
-#line 21
- this.DoubleCheckAutosuggestListOfGlobalSearchField("ноутбук", ((string[])(null)));
-#line hidden
-        }
-        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {
