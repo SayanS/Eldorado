@@ -18,5 +18,27 @@ namespace EldoradoProject.Pages
             PageFactory.InitElements(this.webDriver, this);
         }
 
+        [FindsBy(How = How.XPath, Using = "//ul[@class='header-navigation']")]
+        private IWebElement headerNavigationMenu;
+
+        public void scrollIntoView(IWebElement webElement, int offsetY)
+        {
+            int y = webElement.Location.Y+offsetY;
+            ((IJavaScriptExecutor)webDriver).ExecuteScript("window.scrollTo(0," + y + ")");
+        }
+
+        public BasePage clickOnHeaderMenuItem(String itemName)
+        {
+            scrollIntoView(headerNavigationMenu.FindElement(By.XPath("//li//*[contains(text(),'" + itemName + "')]")), -100);
+            headerNavigationMenu.FindElement(By.XPath("//li//*[contains(text(),'"+itemName+"')]")).Click();
+            switch (itemName)
+            {
+                case "Магазины": PageProvider.setCurrentPage(new ShopsPage(webDriver));
+                    return new ShopsPage(webDriver);
+                default: return this;
+
+            }            
+            
+        }
     }
 }

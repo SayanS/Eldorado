@@ -10,15 +10,17 @@ using EldoradoProject.EndUserSteps;
 namespace EldoradoProject.StepDefinitions
 {
     [Binding]
-    public class StepDefinitions
+    public class StepDefinitions:BaseStepDefinitions
     {
         private HomePageSteps homePageSteps;
         private SelectSityFromTheListPopUpSteps selectSityFromTheListPopUpSteps;
+        private ShopsPageSteps shopsPageSteps;
 
         public StepDefinitions()
         {
             homePageSteps = new HomePageSteps();
             selectSityFromTheListPopUpSteps = new SelectSityFromTheListPopUpSteps();
+            shopsPageSteps = new ShopsPageSteps();
         }
 
         [Given(@"Homepage is opened")]
@@ -30,19 +32,19 @@ namespace EldoradoProject.StepDefinitions
         [Given(@"Close Select your city dialog")]
         public void GivenCloseSelectYourCityDialog()
         {
-            selectSityFromTheListPopUpSteps.closeSelectYourCityDialog();
+            homePageSteps.closeSelectYourCityDialog();
         }
 
         [Given(@"Enter ""(.*)"" into Global Search field")]
         public void GivenEnterIntoGlobalSearchField(string searchText)
         {
-            
+            homePageSteps.enterIntoGlobalSearchField(searchText);
         }
 
         [Then(@"Global Search Autosuggest list should be displayed")]
         public void ThenGlobalSearchAutosuggestListShouldBeDisplayed()
         {
-            
+            homePageSteps.isDisplayedGlobalSearchAutosuggestList();
         }
 
         [Then(@"All products name in Autosuggest list should contains ""(.*)""")]
@@ -50,6 +52,19 @@ namespace EldoradoProject.StepDefinitions
         {
             
         }
+
+        [When(@"Click on item ""(.*)"" of Header navigation menu")]
+        public void WhenClickOnItemOfHeaderNavigationMenu(string itemName)
+        {
+            homePageSteps.clickOnItemOfHeaderNavigationMenu(itemName);
+        }
+
+        [Then(@"Shops page should be opened with title ""(.*)""")]
+        public void ThenShopsPageShouldBeOpenedWithTitle(string title)
+        {
+            shopsPageSteps.isShopsPageTitle(title);
+        }
+
 
     }
 }

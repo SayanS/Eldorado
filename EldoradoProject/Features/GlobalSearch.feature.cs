@@ -71,9 +71,9 @@ namespace EldoradoProject.Features
 #line hidden
         }
         
-        public virtual void AddTwoNumbers(string searchText, string[] exampleTags)
+        public virtual void CheckAutosuggestListOfGlobalSearchField(string searchText, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check Autosuggest list of Global Search field", exampleTags);
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 3
@@ -84,15 +84,80 @@ this.FeatureBackground();
  testRunner.Then("Global Search Autosuggest list should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 11
  testRunner.Then(string.Format("All products name in Autosuggest list should contains \"{0}\"", searchText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
+ testRunner.When("Click on item \"Магазины\" of Header navigation menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
+ testRunner.Then("Shops page should be opened with title \"Магазины Eldorado\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, телевизор", SourceLine=13)]
-        public virtual void AddTwoNumbers_Телевизор()
+        [TechTalk.SpecRun.ScenarioAttribute("Check Autosuggest list of Global Search field, телевизор", SourceLine=15)]
+        public virtual void CheckAutosuggestListOfGlobalSearchField_Телевизор()
         {
 #line 8
-this.AddTwoNumbers("телевизор", ((string[])(null)));
+this.CheckAutosuggestListOfGlobalSearchField("телевизор", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Check Autosuggest list of Global Search field, холодильник", SourceLine=15)]
+        public virtual void CheckAutosuggestListOfGlobalSearchField_Холодильник()
+        {
+#line 8
+this.CheckAutosuggestListOfGlobalSearchField("холодильник", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Check Autosuggest list of Global Search field, пылесос", SourceLine=15)]
+        public virtual void CheckAutosuggestListOfGlobalSearchField_Пылесос()
+        {
+#line 8
+this.CheckAutosuggestListOfGlobalSearchField("пылесос", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Check Autosuggest list of Global Search field, несуществующий", SourceLine=15)]
+        public virtual void CheckAutosuggestListOfGlobalSearchField_Несуществующий()
+        {
+#line 8
+this.CheckAutosuggestListOfGlobalSearchField("несуществующий", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void DoubleCheckAutosuggestListOfGlobalSearchField(string searchText, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Double Check Autosuggest list of Global Search field", exampleTags);
+#line 21
+ this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
+#line 22
+ testRunner.And(string.Format("Enter \"{0}\" into Global Search field", searchText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.Then("Global Search Autosuggest list should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 24
+ testRunner.Then(string.Format("All products name in Autosuggest list should contains \"{0}\"", searchText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 25
+ testRunner.When("Click on item \"Магазины\" of Header navigation menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+ testRunner.Then("Shops page should be opened with title \"Магазины Eldorado\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Double Check Autosuggest list of Global Search field, компьютер", SourceLine=28)]
+        public virtual void DoubleCheckAutosuggestListOfGlobalSearchField_Компьютер()
+        {
+#line 21
+ this.DoubleCheckAutosuggestListOfGlobalSearchField("компьютер", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Double Check Autosuggest list of Global Search field, ноутбук", SourceLine=28)]
+        public virtual void DoubleCheckAutosuggestListOfGlobalSearchField_Ноутбук()
+        {
+#line 21
+ this.DoubleCheckAutosuggestListOfGlobalSearchField("ноутбук", ((string[])(null)));
 #line hidden
         }
         

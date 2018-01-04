@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
 
 namespace EldoradoProject.Pages
 {
@@ -19,12 +20,34 @@ namespace EldoradoProject.Pages
         }
 
         [FindsBy(How=How.XPath, Using = ".//div[@class='header-content desktop-header']//div[@class='select-city-content']//div[@class='button fail']")]
-        private IWebElement selectCityPopUpNoButton;
-        public HomePage openHomePage()
+        private IWebElement selectCityPopUpNoButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='header-content desktop-header']//input[@class='react-autosuggest__input']")]
+        private IWebElement globalSearchField { get; set; }
+                
+        private String GLOBAL_SEARCH_AUTOSUGGEST_FIELD = ".//ul[@class='react-autosuggest__suggestions-list']";
+        private object driver;
+
+        public void enterIntoGlobalSearchField(string searchText)
         {
-            webDriver.Navigate().GoToUrl("https://eldorado.ua/");
-            return new HomePage(webDriver);
+            globalSearchField.Clear();
+            globalSearchField.SendKeys(searchText);
         }
+
+        public bool isDisplayedGlobalSearchAutosuggestList()
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(5));
+                wait.Until(ExpectedConditions.ElementExists(By.XPath(GLOBAL_SEARCH_AUTOSUGGEST_FIELD)));
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
         public SelectSityFromTheListPopUp clickOnNoButtonOfSelectCityPopUp()
         {
             selectCityPopUpNoButton.Click();

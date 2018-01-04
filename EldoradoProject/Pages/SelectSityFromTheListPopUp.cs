@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +20,11 @@ namespace EldoradoProject.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='rodal-dialog city-select-container']")]
         private IWebElement container;
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='rodal-dialog ']/span[@class='rodal-close']")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='rodal-dialog city-select-container']/span[@class='rodal-close']")]
         private IWebElement closePopUpButton;
         
         public void closePopUp()
-        {
+        {            
             closePopUpButton.Click();
         }
     }

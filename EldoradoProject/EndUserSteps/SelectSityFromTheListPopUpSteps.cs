@@ -1,4 +1,5 @@
 ﻿using EldoradoProject.Pages;
+using EldoradoProject.StepDefinitions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,6 @@ namespace EldoradoProject.EndUserSteps
     class SelectSityFromTheListPopUpSteps
     {
         SelectSityFromTheListPopUp selectSityFromTheListPopUp;
-
         public void closeSelectYourCityDialog()
         {
             selectSityFromTheListPopUp.closePopUp();

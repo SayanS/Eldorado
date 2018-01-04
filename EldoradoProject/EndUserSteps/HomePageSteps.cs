@@ -1,4 +1,6 @@
 ﻿using EldoradoProject.Pages;
+using EldoradoProject.StepDefinitions;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using System;
@@ -11,20 +13,30 @@ namespace EldoradoProject.EndUserSteps
 {
     class HomePageSteps
     {
-        private HomePage homePage;
-
-        public HomePageSteps()
-        {
-            IWebDriver webDriver; 
-            FirefoxDriverService ffService = FirefoxDriverService.CreateDefaultService(@"..\packages\WebDriver.GeckoDriver.0.19.0\content");
-            webDriver = new FirefoxDriver(ffService);
-            webDriver.Manage().Window.Maximize();
-            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            homePage = new HomePage(webDriver);
-        }
+        HomePage homePage;
         public void openHomePage()
         {
-            homePage=homePage.openHomePage();
+            homePage = PageProvider.getHomePage();            
+        }
+
+        public void enterIntoGlobalSearchField(string searchText)
+        {
+            homePage.enterIntoGlobalSearchField(searchText);
+        }
+
+        public void closeSelectYourCityDialog()
+        {
+            homePage.clickOnNoButtonOfSelectCityPopUp().closePopUp();
+        }
+
+        public void isDisplayedGlobalSearchAutosuggestList()
+        {
+            Assert.True(homePage.isDisplayedGlobalSearchAutosuggestList());
+        }
+
+        public void clickOnItemOfHeaderNavigationMenu(string itemName)
+        {
+           homePage.clickOnHeaderMenuItem(itemName);
         }
     }
 }
