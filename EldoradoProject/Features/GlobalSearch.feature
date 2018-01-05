@@ -17,5 +17,3 @@ Scenario Outline: Check Autosuggest list of Global Search field
 	| холодильник |
 	| пылесос     |
 	| несуществующий     |
-
-	

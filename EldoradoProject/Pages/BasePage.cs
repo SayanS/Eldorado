@@ -18,7 +18,7 @@ namespace EldoradoProject.Pages
         public BasePage(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
-            wait = new WebDriverWait(webDriver,TimeSpan.FromSeconds(5));
+            wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(5));
             PageFactory.InitElements(this.webDriver, this);
         }
 
@@ -30,19 +30,20 @@ namespace EldoradoProject.Pages
             int y = webElement.Location.Y + offsetY;
             ((IJavaScriptExecutor)webDriver).ExecuteScript("window.scrollTo(0," + y + ")");
         }
-                
+
         public BasePage clickOnHeaderMenuItem(String itemName)
         {
             scrollIntoView(headerNavigationMenu.FindElement(By.XPath("//li//*[contains(text(),'" + itemName + "')]")), -100);
-            headerNavigationMenu.FindElement(By.XPath("//li//*[contains(text(),'"+itemName+"')]")).Click();
+            headerNavigationMenu.FindElement(By.XPath("//li//*[contains(text(),'" + itemName + "')]")).Click();
             switch (itemName)
             {
-                case "Магазины": PageProvider.setCurrentPage(new ShopsPage(webDriver));
+                case "Магазины":
+                    PageProvider.setCurrentPage(new ShopsPage(webDriver));
                     return new ShopsPage(webDriver);
                 default: return this;
 
-            }            
-            
+            }
+
         }
     }
 }

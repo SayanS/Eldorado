@@ -65,6 +65,11 @@ namespace EldoradoProject.StepDefinitions
             shopsPageSteps.isShopsPageTitle(title);
         }
 
+        [Given(@"New method")]
+        public void GivenNewMethod()
+        {
+            ScenarioContext.Current.Pending();
+        }
 
     }
 }

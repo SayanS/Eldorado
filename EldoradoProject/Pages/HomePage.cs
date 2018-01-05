@@ -10,17 +10,17 @@ using OpenQA.Selenium.Support.UI;
 
 namespace EldoradoProject.Pages
 {
-    class HomePage:BasePage
+    class HomePage : BasePage
     {
         private IWebDriver webDriver;
 
-        public HomePage(IWebDriver webDriver):base(webDriver)
-        {            
+        public HomePage(IWebDriver webDriver) : base(webDriver)
+        {
             this.webDriver = webDriver;
             this.PAGE_URL = "https://eldorado.ua/";
         }
 
-        [FindsBy(How=How.XPath, Using = ".//div[@class='header-content desktop-header']//div[@class='select-city-content']//div[@class='button fail']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='header-content desktop-header']//div[@class='select-city-content']//div[@class='button fail']")]
         private IWebElement selectCityPopUpNoButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='header-content desktop-header']//input[@class='react-autosuggest__input']")]
@@ -38,11 +38,11 @@ namespace EldoradoProject.Pages
         public bool isDisplayedGlobalSearchAutosuggestList()
         {
             try
-            {                
+            {
                 wait.Until(ExpectedConditions.ElementIsVisible(GLOBAL_SEARCH_AUTOSUGGEST_FIELD));
                 return true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
             }
