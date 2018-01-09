@@ -10,8 +10,8 @@ using TechTalk.SpecFlow;
 
 namespace EldoradoProject.StepDefinitions
 {
-    
-    public class BaseStepDefinitions
+    [Binding]
+    public class Hooks
     {
         private IWebDriver webDriver;
         [BeforeScenario]
@@ -25,7 +25,8 @@ namespace EldoradoProject.StepDefinitions
         [AfterScenario]
         public void tearDown()
         {
-            this.webDriver.Close();
+            //this.webDriver.Close();
+            this.webDriver.Quit();
 
         }
 

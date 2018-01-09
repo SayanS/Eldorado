@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EldoradoProject.EndUserSteps
 {
-    class SelectSityFromTheListPopUpSteps
+   public class SelectSityFromTheListPopUpSteps
     {
         SelectSityFromTheListPopUp selectSityFromTheListPopUp;
         public void closeSelectYourCityDialog()

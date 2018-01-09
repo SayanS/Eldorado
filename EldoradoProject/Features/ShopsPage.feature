@@ -1,10 +1,9 @@
-﻿Feature: SpecFlowFeature1
+﻿Feature: ShopsPage
 	
 	Background: SetUp
 	Given Homepage is opened
 	Given Close Select your city dialog
 
 
-Scenario: Add two numbers
-And Enter "gggggg" into Global Search field
-And New method
+Scenario: Passing Search word from between the classes
+And New methodl

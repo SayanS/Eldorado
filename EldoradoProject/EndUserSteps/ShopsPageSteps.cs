@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EldoradoProject.EndUserSteps
 {    
-    class ShopsPageSteps
+   public class ShopsPageSteps
     {
         private ShopsPage shopsPage;
 

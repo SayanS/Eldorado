@@ -17,8 +17,8 @@ namespace EldoradoProject.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("SpecFlowFeature1", SourceFile="Features\\ShopsPage.feature", SourceLine=0)]
-    public partial class SpecFlowFeature1Feature
+    [TechTalk.SpecRun.FeatureAttribute("ShopsPage", SourceFile="Features\\ShopsPage.feature", SourceLine=0)]
+    public partial class ShopsPageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -30,7 +30,7 @@ namespace EldoradoProject.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SpecFlowFeature1", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ShopsPage", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,18 +71,16 @@ namespace EldoradoProject.Features
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers", SourceLine=7)]
-        public virtual void AddTwoNumbers()
+        [TechTalk.SpecRun.ScenarioAttribute("Passing Search word from between the classes", SourceLine=7)]
+        public virtual void PassingSearchWordFromBetweenTheClasses()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Passing Search word from between the classes", ((string[])(null)));
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 3
  this.FeatureBackground();
 #line 9
-testRunner.And("Enter \"gggggg\" into Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
-testRunner.And("New method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("New methodl", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -11,9 +11,10 @@ using System.Threading.Tasks;
 
 namespace EldoradoProject.EndUserSteps
 {
-    class HomePageSteps
+   public class HomePageSteps
     {
         HomePage homePage;
+        public String currentSearchText;
         public void openHomePage()
         {
             homePage = PageProvider.getHomePage();            
@@ -22,6 +23,7 @@ namespace EldoradoProject.EndUserSteps
         public void enterIntoGlobalSearchField(string searchText)
         {
             homePage.enterIntoGlobalSearchField(searchText);
+            currentSearchText = searchText;
         }
 
         public void closeSelectYourCityDialog()

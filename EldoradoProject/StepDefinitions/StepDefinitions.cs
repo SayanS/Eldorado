@@ -6,21 +6,24 @@ using OpenQA.Selenium.Firefox;
 using EldoradoProject.Pages;
 using NUnit.Framework;
 using EldoradoProject.EndUserSteps;
+using BoDi;
 
 namespace EldoradoProject.StepDefinitions
 {
     [Binding]
-    public class StepDefinitions:BaseStepDefinitions
+    public class StepDefinitions
     {
         private HomePageSteps homePageSteps;
         private SelectSityFromTheListPopUpSteps selectSityFromTheListPopUpSteps;
         private ShopsPageSteps shopsPageSteps;
-
-        public StepDefinitions()
+        
+        public StepDefinitions(HomePageSteps homePageSteps, 
+                               SelectSityFromTheListPopUpSteps selectSityFromTheListPopUpSteps,
+                               ShopsPageSteps shopsPageSteps)
         {
-            homePageSteps = new HomePageSteps();
-            selectSityFromTheListPopUpSteps = new SelectSityFromTheListPopUpSteps();
-            shopsPageSteps = new ShopsPageSteps();
+            this.homePageSteps = homePageSteps;
+            this.selectSityFromTheListPopUpSteps = selectSityFromTheListPopUpSteps;
+            this.shopsPageSteps = shopsPageSteps;
         }
 
         [Given(@"Homepage is opened")]
@@ -38,7 +41,9 @@ namespace EldoradoProject.StepDefinitions
         [Given(@"Enter ""(.*)"" into Global Search field")]
         public void GivenEnterIntoGlobalSearchField(string searchText)
         {
-            homePageSteps.enterIntoGlobalSearchField(searchText);
+            FeatureContext.Current.Set(searchText,"searchText");          
+            homePageSteps.enterIntoGlobalSearchField(FeatureContext.Current["searchText"].ToString());
+            
         }
 
         [Then(@"Global Search Autosuggest list should be displayed")]
@@ -65,11 +70,12 @@ namespace EldoradoProject.StepDefinitions
             shopsPageSteps.isShopsPageTitle(title);
         }
 
-        [Given(@"New method")]
-        public void GivenNewMethod()
+        [Given(@"Enter into Global Search field")]
+        public void GivenEnterIntoGlobalSearchField()
         {
-            ScenarioContext.Current.Pending();
+            homePageSteps.enterIntoGlobalSearchField(FeatureContext.Current["searchText"].ToString()+"wwwwwwwwwwwwww");
         }
+
 
     }
 }

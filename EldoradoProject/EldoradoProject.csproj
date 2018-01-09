@@ -89,7 +89,8 @@
     <Compile Include="Pages\SelectSityFromTheListPopUp.cs" />
     <Compile Include="Pages\ShopsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StepDefinitions\BaseStepDefinitions.cs" />
+    <Compile Include="StepDefinitions\Hooks.cs" />
+    <Compile Include="StepDefinitions\ShopStepsDefinitions.cs" />
     <Compile Include="StepDefinitions\StepDefinitions.cs" />
   </ItemGroup>
   <ItemGroup>
