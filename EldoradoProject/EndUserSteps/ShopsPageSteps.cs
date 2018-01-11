@@ -1,5 +1,6 @@
 ﻿using EldoradoProject.Pages;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +9,16 @@ using System.Threading.Tasks;
 
 namespace EldoradoProject.EndUserSteps
 {    
-    class ShopsPageSteps
+   public class ShopsPageSteps
     {
-        private ShopsPage shopsPage;
+        public ShopsPageSteps(IWebDriver webDriver)
+        {
+            shopsPage = new ShopsPage(webDriver);
+        }
+        private ShopsPage shopsPage;           
 
         public void isShopsPageTitle(String title)
-        {
-            shopsPage = (ShopsPage)PageProvider.getCurrentPage();
+        {            
             Assert.AreEqual(title,shopsPage.getTitle());
         }
     }

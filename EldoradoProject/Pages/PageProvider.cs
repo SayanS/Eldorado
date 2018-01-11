@@ -4,34 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using TechTalk.SpecFlow;
 
 namespace EldoradoProject.Pages
 {
-    class PageProvider
-    {
-        private static IWebDriver swebDriver;
+    
+    public class PageProvider
+    {/*
+        private IWebDriver swebDriver;
 
-        private static BasePage currentPage;
-        public static void initialize(IWebDriver webDriver)
+        private BasePage currentPage;
+        public PageProvider(IWebDriver webDriver)
         {
             swebDriver = webDriver;
         }
 
-        public static HomePage getHomePage()
+        public  HomePage getHomePage()
         {
             swebDriver.Navigate().GoToUrl("https://eldorado.ua/");
             currentPage= new HomePage(swebDriver);
             return (HomePage)currentPage;
         }
 
-        public static BasePage getCurrentPage()
+        public BasePage getCurrentPage()
         {
             return currentPage;
         }
-        public static void setCurrentPage(BasePage page)
+        public void setCurrentPage(BasePage page)
         {
             currentPage = page;
         }
-
+        */
     }
 }

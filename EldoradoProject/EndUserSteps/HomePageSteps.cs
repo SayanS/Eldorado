@@ -8,15 +8,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow;
 
 namespace EldoradoProject.EndUserSteps
 {
-    class HomePageSteps
+    [Binding]
+   public class HomePageSteps
     {
-        HomePage homePage;
+        public HomePageSteps(IWebDriver webDriver)
+        {
+            homePage = new HomePage(webDriver);            
+        }
+        HomePage homePage;   
         public void openHomePage()
         {
-            homePage = PageProvider.getHomePage();            
+            homePage.open();            
         }
 
         public void enterIntoGlobalSearchField(string searchText)

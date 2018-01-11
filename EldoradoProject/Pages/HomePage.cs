@@ -7,10 +7,12 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
+using TechTalk.SpecFlow;
 
 namespace EldoradoProject.Pages
 {
-    class HomePage : BasePage
+    
+    public class HomePage : BasePage
     {
         private IWebDriver webDriver;
 
@@ -18,6 +20,11 @@ namespace EldoradoProject.Pages
         {
             this.webDriver = webDriver;
             this.PAGE_URL = "https://eldorado.ua/";
+        }
+
+        public void open()
+        {
+            webDriver.Navigate().GoToUrl("https://eldorado.ua/");
         }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='header-content desktop-header']//div[@class='select-city-content']//div[@class='button fail']")]

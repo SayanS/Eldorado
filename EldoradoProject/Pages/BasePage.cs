@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
+using TechTalk.SpecFlow;
 
 namespace EldoradoProject.Pages
 {
-    public abstract class BasePage
+    [Binding]
+    public class BasePage
     {
         private IWebDriver webDriver;
         public String PAGE_URL;
@@ -25,6 +27,8 @@ namespace EldoradoProject.Pages
         [FindsBy(How = How.XPath, Using = "//ul[@class='header-navigation']")]
         private IWebElement headerNavigationMenu;
 
+        public IWebElement HeaderNavigationMenu { get => headerNavigationMenu; set => headerNavigationMenu = value; }
+
         public void scrollIntoView(IWebElement webElement, int offsetY)
         {
             int y = webElement.Location.Y + offsetY;
@@ -33,12 +37,12 @@ namespace EldoradoProject.Pages
 
         public BasePage clickOnHeaderMenuItem(String itemName)
         {
-            scrollIntoView(headerNavigationMenu.FindElement(By.XPath("//li//*[contains(text(),'" + itemName + "')]")), -100);
-            headerNavigationMenu.FindElement(By.XPath("//li//*[contains(text(),'" + itemName + "')]")).Click();
+            scrollIntoView(HeaderNavigationMenu.FindElement(By.XPath("//li//*[contains(text(),'" + itemName + "')]")), -100);
+            HeaderNavigationMenu.FindElement(By.XPath("//li//*[contains(text(),'" + itemName + "')]")).Click();
             switch (itemName)
             {
                 case "Магазины":
-                    PageProvider.setCurrentPage(new ShopsPage(webDriver));
+                   // PageProvider.setCurrentPage(new ShopsPage(webDriver));
                     return new ShopsPage(webDriver);
                 default: return this;
 

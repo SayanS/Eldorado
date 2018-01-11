@@ -10,17 +10,17 @@ using EldoradoProject.EndUserSteps;
 namespace EldoradoProject.StepDefinitions
 {
     [Binding]
-    public class StepDefinitions:BaseStepDefinitions
+    public class StepDefinitions
     {
         private HomePageSteps homePageSteps;
         private SelectSityFromTheListPopUpSteps selectSityFromTheListPopUpSteps;
         private ShopsPageSteps shopsPageSteps;
 
-        public StepDefinitions()
+        public StepDefinitions(IWebDriver webDriver)
         {
-            homePageSteps = new HomePageSteps();
-            selectSityFromTheListPopUpSteps = new SelectSityFromTheListPopUpSteps();
-            shopsPageSteps = new ShopsPageSteps();
+            homePageSteps = new HomePageSteps(webDriver);
+            selectSityFromTheListPopUpSteps = new SelectSityFromTheListPopUpSteps(webDriver);
+            shopsPageSteps = new ShopsPageSteps(webDriver);
         }
 
         [Given(@"Homepage is opened")]
@@ -63,13 +63,7 @@ namespace EldoradoProject.StepDefinitions
         public void ThenShopsPageShouldBeOpenedWithTitle(string title)
         {
             shopsPageSteps.isShopsPageTitle(title);
-        }
-
-        [Given(@"New method")]
-        public void GivenNewMethod()
-        {
-            ScenarioContext.Current.Pending();
-        }
+        }        
 
     }
 }
