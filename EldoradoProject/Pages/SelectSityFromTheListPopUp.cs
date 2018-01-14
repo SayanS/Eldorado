@@ -12,21 +12,16 @@ using TechTalk.SpecFlow;
 namespace EldoradoProject.Pages
 {
     [Binding]
-    public class SelectSityFromTheListPopUp
+    public class SelectSityFromTheListPopUp:BasePage
     {
         private readonly Browser browser;
         private readonly IWebDriver webDriver;
-        public SelectSityFromTheListPopUp(Browser browser)
+        public SelectSityFromTheListPopUp(Browser browser):base(browser)
         {
             this.browser = browser;
-            this.webDriver = browser.webDriver;
-            PageFactory.InitElements(this.webDriver, this);
+            this.webDriver = browser.webDriver;            
         }
-
-        public SelectSityFromTheListPopUp()
-        {
-        }
-
+        
         [FindsBy(How = How.XPath, Using = ".//div[@class='rodal-dialog city-select-container']")]
         private IWebElement container;
 

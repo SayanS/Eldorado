@@ -14,9 +14,6 @@ Scenario Outline: Check Autosuggest list of Global Search field
 	Examples: 
 	| search text |
 	| телевизор   |
-	| ноутбук   |
-
-	Scenario: Second step
-	And Enter into Global Search field	
-
-	
+	| холодильник |
+	| пылесос     |
+	| несуществующий     |

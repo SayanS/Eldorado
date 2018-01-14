@@ -26,12 +26,7 @@ namespace EldoradoProject.Pages
             wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(5));
             PageFactory.InitElements(this.webDriver, this);
         }
-
-        public BasePage()
-        {
-
-        }
-
+        
         [FindsBy(How = How.XPath, Using = "//ul[@class='header-navigation']")]
         private IWebElement headerNavigationMenu;
 

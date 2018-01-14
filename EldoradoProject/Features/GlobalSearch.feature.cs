@@ -100,26 +100,28 @@ this.CheckAutosuggestListOfGlobalSearchField("телевизор", ((string[])(n
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Check Autosuggest list of Global Search field, ноутбук", SourceLine=15)]
-        public virtual void CheckAutosuggestListOfGlobalSearchField_Ноутбук()
+        [TechTalk.SpecRun.ScenarioAttribute("Check Autosuggest list of Global Search field, холодильник", SourceLine=15)]
+        public virtual void CheckAutosuggestListOfGlobalSearchField_Холодильник()
         {
 #line 8
-this.CheckAutosuggestListOfGlobalSearchField("ноутбук", ((string[])(null)));
+this.CheckAutosuggestListOfGlobalSearchField("холодильник", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Second step", SourceLine=18)]
-        public virtual void SecondStep()
+        [TechTalk.SpecRun.ScenarioAttribute("Check Autosuggest list of Global Search field, пылесос", SourceLine=15)]
+        public virtual void CheckAutosuggestListOfGlobalSearchField_Пылесос()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Second step", ((string[])(null)));
-#line 19
- this.ScenarioSetup(scenarioInfo);
-#line 3
-this.FeatureBackground();
-#line 20
- testRunner.And("Enter into Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+this.CheckAutosuggestListOfGlobalSearchField("пылесос", ((string[])(null)));
 #line hidden
-            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Check Autosuggest list of Global Search field, несуществующий", SourceLine=15)]
+        public virtual void CheckAutosuggestListOfGlobalSearchField_Несуществующий()
+        {
+#line 8
+this.CheckAutosuggestListOfGlobalSearchField("несуществующий", ((string[])(null)));
+#line hidden
         }
         
         [TechTalk.SpecRun.TestRunCleanup()]

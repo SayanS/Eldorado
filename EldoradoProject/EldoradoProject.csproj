@@ -78,18 +78,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GlobalSearch.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\ShopsPage.feature.cs">
+    <Compile Include="Features\SpecFlowFeature1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ShopsPage.feature</DependentUpon>
+      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
     </Compile>
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\SelectSityFromTheListPopUp.cs" />
     <Compile Include="Pages\ShopsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StepDefinitions\BaseStepDefinitions.cs" />
     <Compile Include="StepDefinitions\Browser.cs" />
+    <Compile Include="StepDefinitions\Hooks.cs" />
     <Compile Include="StepDefinitions\ShopPageSteps.cs" />
     <Compile Include="StepDefinitions\StepDefinitions.cs" />
   </ItemGroup>
@@ -102,9 +102,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GlobalSearch.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\ShopsPage.feature">
+    <None Include="Features\SpecFlowFeature1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ShopsPage.feature.cs</LastGenOutput>
+      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
