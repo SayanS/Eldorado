@@ -85,11 +85,11 @@
     </Compile>
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\HomePage.cs" />
-    <Compile Include="Pages\PageProvider.cs" />
     <Compile Include="Pages\SelectSityFromTheListPopUp.cs" />
     <Compile Include="Pages\ShopsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefinitions\BaseStepDefinitions.cs" />
+    <Compile Include="StepDefinitions\Browser.cs" />
     <Compile Include="StepDefinitions\ShopPageSteps.cs" />
     <Compile Include="StepDefinitions\StepDefinitions.cs" />
   </ItemGroup>

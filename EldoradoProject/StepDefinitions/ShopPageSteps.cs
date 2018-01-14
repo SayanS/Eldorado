@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EldoradoProject.EndUserSteps;
+using EldoradoProject.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +10,17 @@ using TechTalk.SpecFlow;
 namespace EldoradoProject.StepDefinitions
 {
     [Binding]
-    class ShopPageSteps
-    {
+    class ShopPageSteps {      
+         public ShopPageSteps(Browser browser)
+         {
+            homePageSteps = new HomePageSteps(browser);
+         }
+        private HomePageSteps homePageSteps;
+    
         [Given(@"New method")]
         public void GivenNewMethod()
         {
-            ScenarioContext.Current.Pending();
+            homePageSteps.enterIntoGlobalSearchField("My text");           
         }
 
 

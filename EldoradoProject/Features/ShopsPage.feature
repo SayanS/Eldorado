@@ -8,3 +8,4 @@
 Scenario: Add two numbers
 And Enter "gggggg" into Global Search field
 And New method
+

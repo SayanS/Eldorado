@@ -1,4 +1,5 @@
 ﻿using EldoradoProject.Pages;
+using EldoradoProject.StepDefinitions;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
@@ -10,10 +11,10 @@ using System.Threading.Tasks;
 namespace EldoradoProject.EndUserSteps
 {    
    public class ShopsPageSteps
-    {
-        public ShopsPageSteps(IWebDriver webDriver)
+    {        
+        public ShopsPageSteps(Browser browser)
         {
-            shopsPage = new ShopsPage(webDriver);
+            shopsPage = new ShopsPage(browser);
         }
         private ShopsPage shopsPage;           
 

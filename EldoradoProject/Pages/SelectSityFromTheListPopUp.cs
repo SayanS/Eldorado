@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using EldoradoProject.StepDefinitions;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -10,15 +11,22 @@ using TechTalk.SpecFlow;
 
 namespace EldoradoProject.Pages
 {
-    
+    [Binding]
     public class SelectSityFromTheListPopUp
     {
-        IWebDriver webDriver;
-        public SelectSityFromTheListPopUp(IWebDriver webDriver)
+        private readonly Browser browser;
+        private readonly IWebDriver webDriver;
+        public SelectSityFromTheListPopUp(Browser browser)
         {
-            this.webDriver = webDriver;
+            this.browser = browser;
+            this.webDriver = browser.webDriver;
             PageFactory.InitElements(this.webDriver, this);
         }
+
+        public SelectSityFromTheListPopUp()
+        {
+        }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='rodal-dialog city-select-container']")]
         private IWebElement container;
 

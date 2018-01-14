@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EldoradoProject.StepDefinitions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -13,15 +14,22 @@ namespace EldoradoProject.Pages
     [Binding]
     public class BasePage
     {
-        private IWebDriver webDriver;
+        private readonly Browser browser;
+        private readonly IWebDriver webDriver;
         public String PAGE_URL;
         public WebDriverWait wait;
 
-        public BasePage(IWebDriver webDriver)
+        public BasePage(Browser browser)
         {
-            this.webDriver = webDriver;
+            this.browser = browser;
+            this.webDriver = browser.webDriver;
             wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(5));
             PageFactory.InitElements(this.webDriver, this);
+        }
+
+        public BasePage()
+        {
+
         }
 
         [FindsBy(How = How.XPath, Using = "//ul[@class='header-navigation']")]
@@ -42,8 +50,7 @@ namespace EldoradoProject.Pages
             switch (itemName)
             {
                 case "Магазины":
-                   // PageProvider.setCurrentPage(new ShopsPage(webDriver));
-                    return new ShopsPage(webDriver);
+                   // PageProvider.setCurrentPage(new ShopsPage(webDriver));                    
                 default: return this;
 
             }

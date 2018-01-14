@@ -14,12 +14,13 @@ namespace EldoradoProject.EndUserSteps
 {
     [Binding]
    public class HomePageSteps
-    {
-        public HomePageSteps(IWebDriver webDriver)
+    {      
+        private HomePage homePage;
+        public HomePageSteps(Browser browser)
         {
-            homePage = new HomePage(webDriver);            
-        }
-        HomePage homePage;   
+               homePage = new HomePage(browser);
+        }        
+      
         public void openHomePage()
         {
             homePage.open();            

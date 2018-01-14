@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using EldoradoProject.StepDefinitions;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -10,13 +11,15 @@ using TechTalk.SpecFlow;
 
 namespace EldoradoProject.Pages
 {
-    
+    [Binding]
     public class ShopsPage:BasePage
     {
-        IWebDriver webDriver;
-        public ShopsPage(IWebDriver webDriver):base(webDriver)
+        private readonly Browser browser;
+        private readonly IWebDriver webDriver;
+        public ShopsPage(Browser browser):base(browser)
         {
-            this.webDriver = webDriver;
+            this.browser = browser;
+            this.webDriver = browser.webDriver;
         }
 
         [FindsBy(How = How.XPath, Using = "//div[@class='shops-title']")]

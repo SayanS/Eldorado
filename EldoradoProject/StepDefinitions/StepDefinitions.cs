@@ -14,13 +14,13 @@ namespace EldoradoProject.StepDefinitions
     {
         private HomePageSteps homePageSteps;
         private SelectSityFromTheListPopUpSteps selectSityFromTheListPopUpSteps;
-        private ShopsPageSteps shopsPageSteps;
+        private ShopsPageSteps shopsPageSteps;       
 
-        public StepDefinitions(IWebDriver webDriver)
+        public StepDefinitions(Browser browser)
         {
-            homePageSteps = new HomePageSteps(webDriver);
-            selectSityFromTheListPopUpSteps = new SelectSityFromTheListPopUpSteps(webDriver);
-            shopsPageSteps = new ShopsPageSteps(webDriver);
+            homePageSteps = new HomePageSteps(browser);
+            selectSityFromTheListPopUpSteps = new SelectSityFromTheListPopUpSteps(browser);
+            shopsPageSteps = new ShopsPageSteps(browser);
         }
 
         [Given(@"Homepage is opened")]
@@ -38,7 +38,7 @@ namespace EldoradoProject.StepDefinitions
         [Given(@"Enter ""(.*)"" into Global Search field")]
         public void GivenEnterIntoGlobalSearchField(string searchText)
         {
-            homePageSteps.enterIntoGlobalSearchField(searchText);
+            homePageSteps.enterIntoGlobalSearchField(searchText);            
         }
 
         [Then(@"Global Search Autosuggest list should be displayed")]

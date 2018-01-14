@@ -8,20 +8,23 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
+using EldoradoProject.StepDefinitions;
 
 namespace EldoradoProject.Pages
 {
-    
+    [Binding]
     public class HomePage : BasePage
     {
-        private IWebDriver webDriver;
+        private readonly Browser browser;
+        private readonly IWebDriver webDriver;
 
-        public HomePage(IWebDriver webDriver) : base(webDriver)
+        public HomePage(Browser browser) : base(browser)
         {
-            this.webDriver = webDriver;
+            this.browser = browser;
+            this.webDriver = browser.webDriver;
             this.PAGE_URL = "https://eldorado.ua/";
         }
-
+        
         public void open()
         {
             webDriver.Navigate().GoToUrl("https://eldorado.ua/");
@@ -39,7 +42,7 @@ namespace EldoradoProject.Pages
         public void enterIntoGlobalSearchField(string searchText)
         {
             globalSearchField.Clear();
-            globalSearchField.SendKeys(searchText);
+            globalSearchField.SendKeys(searchText);           
         }
 
         public bool isDisplayedGlobalSearchAutosuggestList()
@@ -58,7 +61,7 @@ namespace EldoradoProject.Pages
         public SelectSityFromTheListPopUp clickOnNoButtonOfSelectCityPopUp()
         {
             selectCityPopUpNoButton.Click();
-            return new SelectSityFromTheListPopUp(webDriver);
+            return new SelectSityFromTheListPopUp(browser);
         }
     }
 }

@@ -12,10 +12,9 @@ namespace EldoradoProject.EndUserSteps
 {
     [Binding]
     public class SelectSityFromTheListPopUpSteps
-    {
-    public SelectSityFromTheListPopUpSteps(IWebDriver webDriver)
-    {
-        selectSityFromTheListPopUp = new SelectSityFromTheListPopUp(webDriver);
+    {     
+    public SelectSityFromTheListPopUpSteps(Browser browser) {     
+          selectSityFromTheListPopUp = new SelectSityFromTheListPopUp(browser);
     }
         SelectSityFromTheListPopUp selectSityFromTheListPopUp;
         public void closeSelectYourCityDialog()

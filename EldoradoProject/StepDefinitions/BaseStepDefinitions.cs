@@ -13,28 +13,25 @@ namespace EldoradoProject.StepDefinitions
 {
     [Binding]
     public class Hooks
-    {
-        private readonly IObjectContainer objectContainer;
-        private IWebDriver webDriver;
+    {        
+        private readonly Browser browser;
 
-        public Hooks(IObjectContainer objectContainer)
+        public Hooks(Browser browser)
         {
-            this.objectContainer = objectContainer;
+            this.browser = browser;
         }
 
         [BeforeScenario]
         public void setUp() {            
             FirefoxDriverService ffService = FirefoxDriverService.CreateDefaultService(@"..\packages\WebDriver.GeckoDriver.0.19.0\content");
-            webDriver = new FirefoxDriver(ffService);
-            webDriver.Manage().Window.Maximize();
-            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            objectContainer.RegisterInstanceAs<IWebDriver>(webDriver);
-            //PageProvider.initialize(webDriver);
+            browser.webDriver = new FirefoxDriver(ffService);
+            browser.webDriver.Manage().Window.Maximize();
+            browser.webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);                        
         }
         [AfterScenario]
         public void tearDown()
         {
-            webDriver.Quit();
+            browser.webDriver.Quit();
         }
 
     }
