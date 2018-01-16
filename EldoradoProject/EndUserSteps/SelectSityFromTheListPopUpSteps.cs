@@ -12,11 +12,11 @@ namespace EldoradoProject.EndUserSteps
 {
     [Binding]
     public class SelectSityFromTheListPopUpSteps
-    {     
-    public SelectSityFromTheListPopUpSteps(Browser browser) {     
-          selectSityFromTheListPopUp = new SelectSityFromTheListPopUp(browser);
-    }
-        SelectSityFromTheListPopUp selectSityFromTheListPopUp;
+    {
+        private readonly SelectSityFromTheListPopUp selectSityFromTheListPopUp;
+        public SelectSityFromTheListPopUpSteps(SelectSityFromTheListPopUp selectSityFromTheListPopUp) {     
+          this.selectSityFromTheListPopUp =selectSityFromTheListPopUp;
+    }      
         public void closeSelectYourCityDialog()
         {
             selectSityFromTheListPopUp.closePopUp();

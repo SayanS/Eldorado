@@ -16,17 +16,17 @@ namespace EldoradoProject.StepDefinitions
         private SelectSityFromTheListPopUpSteps selectSityFromTheListPopUpSteps;
         private ShopsPageSteps shopsPageSteps;       
 
-        public StepDefinitions(Browser browser)
+        public StepDefinitions(HomePageSteps homePageSteps, SelectSityFromTheListPopUpSteps selectSityFromTheListPopUpSteps, ShopsPageSteps shopsPageSteps)
         {
-            homePageSteps = new HomePageSteps(browser);
-            selectSityFromTheListPopUpSteps = new SelectSityFromTheListPopUpSteps(browser);
-            shopsPageSteps = new ShopsPageSteps(browser);
+            this.homePageSteps = homePageSteps;
+            this.selectSityFromTheListPopUpSteps = selectSityFromTheListPopUpSteps;
+            this.shopsPageSteps = shopsPageSteps;
         }
 
         [Given(@"Homepage is opened")]
         public void GivenHomepageIsOpened()
         {            
-            homePageSteps.openHomePage();
+            homePageSteps.openHomePage();           
         }
         
         [Given(@"Close Select your city dialog")]

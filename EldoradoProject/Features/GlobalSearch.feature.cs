@@ -108,22 +108,6 @@ this.CheckAutosuggestListOfGlobalSearchField("холодильник", ((string[
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Check Autosuggest list of Global Search field, пылесос", SourceLine=15)]
-        public virtual void CheckAutosuggestListOfGlobalSearchField_Пылесос()
-        {
-#line 8
-this.CheckAutosuggestListOfGlobalSearchField("пылесос", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Check Autosuggest list of Global Search field, несуществующий", SourceLine=15)]
-        public virtual void CheckAutosuggestListOfGlobalSearchField_Несуществующий()
-        {
-#line 8
-this.CheckAutosuggestListOfGlobalSearchField("несуществующий", ((string[])(null)));
-#line hidden
-        }
-        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

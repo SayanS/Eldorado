@@ -11,9 +11,9 @@ namespace EldoradoProject.StepDefinitions
 {
     [Binding]
     class ShopPageSteps {      
-         public ShopPageSteps(Browser browser)
+         public ShopPageSteps(HomePageSteps homePageSteps)
          {
-            homePageSteps = new HomePageSteps(browser);
+            this.homePageSteps = homePageSteps;
          }
         private HomePageSteps homePageSteps;
     

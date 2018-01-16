@@ -15,10 +15,10 @@ namespace EldoradoProject.EndUserSteps
     [Binding]
    public class HomePageSteps
     {      
-        private HomePage homePage;
-        public HomePageSteps(Browser browser)
+        private readonly HomePage homePage;
+        public HomePageSteps(HomePage homePage)
         {
-               homePage = new HomePage(browser);
+               this.homePage = homePage;
         }        
       
         public void openHomePage()

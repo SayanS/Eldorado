@@ -11,13 +11,12 @@ using System.Threading.Tasks;
 namespace EldoradoProject.EndUserSteps
 {    
    public class ShopsPageSteps
-    {        
-        public ShopsPageSteps(Browser browser)
+    {
+        private readonly ShopsPage shopsPage;
+        public ShopsPageSteps(ShopsPage shopsPage)
         {
-            shopsPage = new ShopsPage(browser);
+            this.shopsPage = shopsPage;
         }
-        private ShopsPage shopsPage;           
-
         public void isShopsPageTitle(String title)
         {            
             Assert.AreEqual(title,shopsPage.getTitle());
